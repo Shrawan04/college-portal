@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs | College Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container">
+    <h2>Job board</h2>
+    <div id="postCard" class="card" hidden>
+      <h3>Post a job</h3>
+      <form id="jobForm">
+        <div class="form-row">
+          <div class="form-group"><label for="title">Job title</label><input id="title" name="title" maxlength="200" required></div>
+          <div class="form-group"><label for="company">Company</label><input id="company" name="company" maxlength="150" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="location">Location</label><input id="location" name="location" maxlength="150" required></div>
+          <div class="form-group"><label for="deadline">Apply before</label><input id="deadline" name="deadline" type="date" required></div>
+        </div>
+        <div class="form-group"><label for="description">Description</label><textarea id="description" name="description" maxlength="5000" required></textarea></div>
+        <button class="btn btn-primary" type="submit">Post job</button>
+      </form>
+    </div>
+    <form id="searchForm" class="filters">
+      <div class="form-group"><label for="q">Search title or company</label><input id="q" type="search" maxlength="100"></div>
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    <div id="jobs" class="list" aria-live="polite"></div>
+    <div id="pager" class="pager"></div>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>

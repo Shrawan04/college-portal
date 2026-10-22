@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | College Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="auth-container">
+    <h2>Create your account</h2>
+    <form id="registerForm" novalidate>
+      <div class="form-group"><label for="name">Full name</label>
+        <input id="name" name="name" type="text" maxlength="100" autocomplete="name" required>
+        <span class="field-error" id="err-name"></span></div>
+      <div class="form-group"><label for="email">Email</label>
+        <input id="email" name="email" type="email" maxlength="150" autocomplete="email" required>
+        <span class="field-error" id="err-email"></span></div>
+      <div class="form-group"><label for="password">Password</label>
+        <input id="password" name="password" type="password" maxlength="72" autocomplete="new-password" required>
+        <span class="hint">At least 8 characters, 1 uppercase letter and 1 number</span>
+        <span class="field-error" id="err-password"></span></div>
+      <div class="form-group"><label for="confirm_password">Confirm password</label>
+        <input id="confirm_password" name="confirm_password" type="password" maxlength="72" autocomplete="new-password" required>
+        <span class="field-error" id="err-confirm_password"></span></div>
+      <div class="form-group"><label for="role">I am a</label>
+        <select id="role" name="role"><option value="student">Student</option><option value="alumni">Alumni</option></select></div>
+      <div class="form-group"><label for="college_id">College ID</label>
+        <input id="college_id" name="college_id" type="text" maxlength="50" required>
+        <span class="field-error" id="err-college_id"></span></div>
+
+      <div id="alumniFields" hidden>
+        <div class="form-group"><label for="graduation_year">Graduation year</label>
+          <input id="graduation_year" name="graduation_year" type="number" min="1950">
+          <span class="field-error" id="err-graduation_year"></span></div>
+        <div class="form-group"><label for="degree">Degree</label>
+          <input id="degree" name="degree" type="text" maxlength="100">
+          <span class="field-error" id="err-degree"></span></div>
+        <div class="form-group"><label for="company">Current company</label>
+          <input id="company" name="company" type="text" maxlength="120"></div>
+        <div class="form-group"><label for="designation">Designation</label>
+          <input id="designation" name="designation" type="text" maxlength="120"></div>
+        <div class="form-group"><label for="linkedin_url">LinkedIn URL</label>
+          <input id="linkedin_url" name="linkedin_url" type="url" placeholder="https://linkedin.com/in/you">
+          <span class="field-error" id="err-linkedin_url"></span></div>
+      </div>
+
+      <button class="btn btn-primary btn-block" type="submit" id="submitBtn">Register</button>
+      <p class="error-msg" id="formMsg" aria-live="polite"></p>
+    </form>
+    <div id="doneBox" hidden>
+      <h2>Check your email</h2>
+      <p class="success-msg" id="doneMsg"></p>
+      <p>Click the link in the email, then <a href="login.html">log in</a>. The link works for 24 hours.</p>
+    </div>
+    <p>Already registered? <a href="login.html">Log in</a></p>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

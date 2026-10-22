@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | College Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="auth-container">
+    <h2>Welcome back</h2>
+    <form id="loginForm">
+      <div class="form-group"><label for="email">College email</label>
+        <input type="email" id="email" placeholder="you@college.edu" autocomplete="username" required></div>
+      <div class="form-group"><label for="password">Password</label>
+        <input type="password" id="password" maxlength="72" autocomplete="current-password" required></div>
+      <button type="submit" class="btn btn-primary btn-block" id="loginBtn">Login</button>
+      <p id="errorMsg" class="error-msg" aria-live="polite"></p>
+      <div id="resendBox" hidden>
+        <button type="button" class="btn btn-small" id="resendBtn">Resend verification email</button>
+      </div>
+    </form>
+    <p><a href="forgot-password.html">Forgot password?</a> &middot; <a href="register.html">Create account</a></p>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

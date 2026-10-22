@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | College Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container">
+    <h2>Upcoming events</h2>
+    <div class="filters">
+      <div class="form-group"><label for="category">Category</label>
+        <select id="category"><option value="">All categories</option></select></div>
+      <div class="form-group"><label for="sort">Sort by date</label>
+        <select id="sort"><option value="asc">Soonest first</option><option value="desc">Latest first</option></select></div>
+    </div>
+    <div id="events" class="events-grid" aria-live="polite"></div>
+    <div id="pager" class="pager"></div>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/student.js"></script>
+</body>
+</html>

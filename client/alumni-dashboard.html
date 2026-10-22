@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni Portal | College Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container">
+    <div class="tabs">
+      <button class="tab-btn active" type="button" data-tab="directory">Directory</button>
+      <button class="tab-btn" type="button" data-tab="profile">My Profile</button>
+      <button class="tab-btn" type="button" data-tab="network">My Network</button>
+      <button class="tab-btn" type="button" data-tab="news">News</button>
+    </div>
+
+    <section id="tab-directory">
+      <form id="dirForm" class="filters">
+        <div class="form-group"><label for="d-q">Name</label><input id="d-q" type="search" maxlength="100"></div>
+        <div class="form-group"><label for="d-year">Batch year</label><input id="d-year" type="number" min="1950"></div>
+        <div class="form-group"><label for="d-degree">Degree</label><input id="d-degree" type="text" maxlength="100"></div>
+        <div class="form-group"><label for="d-company">Company</label><input id="d-company" type="text" maxlength="120"></div>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+      <div id="dirResults" class="alumni-grid"></div>
+      <div id="dirPager" class="pager"></div>
+    </section>
+
+    <section id="tab-profile" hidden>
+      <div id="approvalNote" class="card" hidden>
+        <strong>Awaiting admin approval.</strong> Until an admin approves your profile you do not appear in the directory and cannot post jobs or connect.
+      </div>
+      <div class="card">
+        <div class="person">
+          <div id="avatarBox"></div>
+          <div class="form-group"><label for="pic">Profile picture (JPG, PNG or WEBP, max 2 MB)</label>
+            <input id="pic" type="file" accept="image/jpeg,image/png,image/webp"></div>
+        </div>
+        <form id="profileForm">
+          <div class="form-row">
+            <div class="form-group"><label for="p-year">Graduation year</label><input id="p-year" name="graduation_year" type="number" min="1950" required></div>
+            <div class="form-group"><label for="p-degree">Degree</label><input id="p-degree" name="degree" type="text" maxlength="100" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="p-company">Company</label><input id="p-company" name="company" type="text" maxlength="120"></div>
+            <div class="form-group"><label for="p-designation">Designation</label><input id="p-designation" name="designation" type="text" maxlength="120"></div>
+          </div>
+          <div class="form-group"><label for="p-linkedin">LinkedIn URL</label><input id="p-linkedin" name="linkedin_url" type="url" placeholder="https://linkedin.com/in/you"></div>
+          <div class="form-group"><label for="p-bio">Bio and work history</label><textarea id="p-bio" name="bio" maxlength="2000"></textarea></div>
+          <button class="btn btn-primary" type="submit">Save profile</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="tab-network" hidden>
+      <h3>Requests received</h3><div id="incoming" class="list"></div>
+      <h3>Requests sent</h3><div id="outgoing" class="list"></div>
+      <h3>My network</h3><div id="network" class="list"></div>
+    </section>
+
+    <section id="tab-news" hidden>
+      <div id="newsList" class="list"></div>
+      <div id="newsPager" class="pager"></div>
+    </section>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/alumni.js"></script>
+</body>
+</html>
